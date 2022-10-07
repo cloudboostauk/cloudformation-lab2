@@ -1,0 +1,11 @@
+Outputs:
+  AccessKeyID:
+    Value: !Ref S3UserAccessKey
+  SecretAccessKey:
+    Value: !GetAtt S3UserAccessKey.SecretAccessKey
+  BucketName:
+    Value: !Ref s3buckets
+  User:
+    Value: !Ref S3User
+  Password: 
+    Value: !Sub ${AWS::AccountId}Gve$$m£

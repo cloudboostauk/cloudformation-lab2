@@ -1,0 +1,18 @@
+  S3User:
+    Type: AWS::IAM::User
+    Properties:
+      Policies:
+        - PolicyName: bucket-access
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Action:
+              - s3:*
+              Resource:
+                - !Sub arn:aws:s3:::${s3buckets}
+                - !Sub arn:aws:s3:::${s3buckets}/*
+      LoginProfile:
+          Password: !Sub ${AWS::AccountId}Gve$$m£ 
+          PasswordResetRequired: true
+      UserName: !Sub ${AWS::StackName}-${AWS::AccountId}
